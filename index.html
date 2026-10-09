@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head><!-- Google tag (gtag.js) -->
@@ -10,1342 +11,377 @@
   gtag('config', 'G-H4VF7WNZRR');
 </script>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>KidsTube — Premium Kids Streaming</title>
-
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KidsTube - Fun & Learning</title>
+<meta name="description" content="A fun kids video library with nursery rhymes, cartoons, learning videos and more.">
 <style>
+:root{--bg:#f6f8ff;--card:#fff;--ink:#202443;--muted:#777e98;--primary:#6558ed;--pink:#ff679c;--yellow:#ffd65a}
 *{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{
- margin:0;
- font-family:Inter,Arial,sans-serif;
- background:#070812;
- color:#fff;
- overflow-x:hidden;
-}
-button,input{font:inherit}
-button{cursor:pointer}
-:root{
- --pink:#ff3d81;
- --purple:#755cff;
- --blue:#27b9ff;
- --card:#111321;
- --muted:#9ca3b8;
-}
-
-/* INTRO */
-#intro{
- position:fixed;
- inset:0;
- z-index:9999;
- background:#05050b;
- display:flex;
- align-items:center;
- justify-content:center;
- overflow:hidden;
- animation:introOut 1s ease 4.5s forwards;
-}
-.introGlow{
- position:absolute;
- width:650px;
- height:650px;
- background:radial-gradient(circle,rgba(117,92,255,.25),transparent 65%);
- animation:glow 2.5s infinite alternate;
-}
-.introLogo{
- position:relative;
- text-align:center;
- animation:logoIn 1.4s cubic-bezier(.2,.8,.2,1);
-}
-.playLogo{
- width:100px;
- height:100px;
- margin:auto;
- border-radius:31px;
- background:linear-gradient(135deg,#ff3d81,#755cff);
- display:grid;
- place-items:center;
- font-size:42px;
- box-shadow:
- 0 0 30px rgba(117,92,255,.6),
- 0 0 90px rgba(255,61,129,.25);
- animation:pulse 1.5s infinite alternate;
-}
-.introLogo h1{
- margin:24px 0 4px;
- font-size:48px;
- letter-spacing:-2px;
-}
-.introLogo p{
- margin:0;
- color:#8f94aa;
- letter-spacing:4px;
- font-size:11px;
- text-transform:uppercase;
-}
-.introLine{
- position:absolute;
- bottom:50px;
- width:180px;
- height:2px;
- background:linear-gradient(90deg,transparent,#755cff,transparent);
- animation:line 2s infinite;
-}
-@keyframes logoIn{
- from{opacity:0;transform:scale(.55) translateY(30px)}
- to{opacity:1;transform:scale(1) translateY(0)}
-}
-@keyframes pulse{
- from{transform:scale(1)}
- to{transform:scale(1.06);box-shadow:0 0 50px rgba(117,92,255,.75)}
-}
-@keyframes glow{
- from{transform:scale(.8)}
- to{transform:scale(1.2)}
-}
-@keyframes line{
- 0%{transform:scaleX(.2);opacity:.2}
- 50%{transform:scaleX(1);opacity:1}
- 100%{transform:scaleX(.2);opacity:.2}
-}
-@keyframes introOut{
- to{opacity:0;visibility:hidden;pointer-events:none}
-}
-
-/* BACKGROUND */
-.bg{
- position:fixed;
- inset:0;
- pointer-events:none;
- z-index:-1;
- background:
- radial-gradient(circle at 15% 10%,rgba(117,92,255,.13),transparent 25%),
- radial-gradient(circle at 90% 30%,rgba(255,61,129,.09),transparent 25%);
-}
-
-/* HEADER */
-header{
- position:fixed;
- top:0;
- left:0;
- right:0;
- height:76px;
- z-index:100;
- display:flex;
- align-items:center;
- padding:0 5%;
- gap:35px;
- background:linear-gradient(to bottom,rgba(5,6,13,.95),rgba(5,6,13,.25));
- backdrop-filter:blur(12px);
-}
-.brand{
- display:flex;
- align-items:center;
- gap:10px;
- font-size:21px;
- font-weight:900;
- white-space:nowrap;
-}
-.brandIcon{
- width:37px;
- height:37px;
- border-radius:11px;
- background:linear-gradient(135deg,var(--pink),var(--purple));
- display:grid;
- place-items:center;
- box-shadow:0 0 25px rgba(117,92,255,.4);
-}
-nav{
- display:flex;
- gap:25px;
- color:#aeb3c5;
- font-size:14px;
-}
-nav a{
- transition:.2s;
- cursor:pointer;
-}
-nav a:hover,nav a.active{color:#fff}
-.headerRight{
- margin-left:auto;
- display:flex;
- gap:10px;
- align-items:center;
-}
-.search{
- width:230px;
- height:40px;
- border:1px solid rgba(255,255,255,.09);
- background:rgba(255,255,255,.055);
- border-radius:12px;
- display:flex;
- align-items:center;
- padding:0 12px;
-}
-.search input{
- border:0;
- outline:0;
- background:none;
- color:#fff;
- width:100%;
- font-size:12px;
-}
-.search span{color:#858ba0}
-.circleBtn{
- width:40px;
- height:40px;
- border-radius:12px;
- border:1px solid rgba(255,255,255,.08);
- background:rgba(255,255,255,.06);
- color:#fff;
-}
-.mobileBtn{display:none}
-
-/* HERO */
-.hero{
- min-height:730px;
- padding:190px 6% 100px;
- position:relative;
- overflow:hidden;
- display:flex;
- align-items:center;
-}
-.hero:before{
- content:"";
- position:absolute;
- width:700px;
- height:700px;
- right:-160px;
- top:70px;
- background:
- radial-gradient(circle at center,
- rgba(117,92,255,.55),
- rgba(255,61,129,.13) 38%,
- transparent 68%);
- filter:blur(15px);
-}
-.heroContent{
- position:relative;
- z-index:2;
- max-width:650px;
- animation:heroIn 1.2s ease 4.7s both;
-}
-.kicker{
- display:inline-flex;
- align-items:center;
- gap:8px;
- color:#c6bfff;
- background:rgba(117,92,255,.12);
- border:1px solid rgba(117,92,255,.25);
- border-radius:30px;
- padding:8px 13px;
- font-size:11px;
- font-weight:bold;
- letter-spacing:1px;
- text-transform:uppercase;
-}
-.kicker i{
- width:7px;
- height:7px;
- border-radius:50%;
- background:#65ffb0;
- box-shadow:0 0 10px #65ffb0;
-}
-.hero h1{
- font-size:clamp(45px,7vw,82px);
- line-height:.95;
- letter-spacing:-4px;
- margin:22px 0;
-}
-.hero h1 span{
- background:linear-gradient(90deg,#fff,#9b8cff,#ff75a8);
- -webkit-background-clip:text;
- color:transparent;
-}
-.hero p{
- color:#9da3b8;
- line-height:1.7;
- max-width:560px;
- font-size:16px;
-}
-.heroButtons{
- display:flex;
- gap:12px;
- margin-top:30px;
-}
-.primary{
- border:0;
- padding:14px 22px;
- border-radius:12px;
- background:linear-gradient(135deg,var(--pink),var(--purple));
- color:#fff;
- font-weight:800;
- box-shadow:0 12px 30px rgba(117,92,255,.25);
-}
-.secondary{
- padding:14px 22px;
- border-radius:12px;
- border:1px solid rgba(255,255,255,.12);
- background:rgba(255,255,255,.06);
- color:#fff;
-}
-.heroOrb{
- position:absolute;
- right:8%;
- top:170px;
- width:430px;
- height:430px;
- border-radius:50%;
- border:1px solid rgba(255,255,255,.08);
- box-shadow:
- inset 0 0 90px rgba(117,92,255,.15),
- 0 0 90px rgba(117,92,255,.12);
- animation:float 5s ease-in-out infinite;
-}
-.heroOrb:before{
- content:"▶";
- position:absolute;
- inset:0;
- display:grid;
- place-items:center;
- font-size:90px;
- color:#fff;
- text-shadow:0 0 40px #755cff;
-}
-.orbRing{
- position:absolute;
- inset:-30px;
- border:1px solid rgba(117,92,255,.18);
- border-radius:50%;
- animation:spin 16s linear infinite;
-}
-.orbRing:after{
- content:"";
- position:absolute;
- width:12px;
- height:12px;
- background:#ff4b8b;
- border-radius:50%;
- top:10%;
- left:20%;
- box-shadow:0 0 25px #ff4b8b;
-}
-@keyframes float{
- 50%{transform:translateY(-15px)}
-}
-@keyframes spin{to{transform:rotate(360deg)}}
-@keyframes heroIn{
- from{opacity:0;transform:translateY(40px)}
- to{opacity:1;transform:translateY(0)}
-}
-
-/* CONTENT */
-.content{
- padding:0 6% 80px;
-}
-.section{
- margin-top:45px;
-}
-.sectionTop{
- display:flex;
- align-items:end;
- justify-content:space-between;
- margin-bottom:18px;
-}
-.sectionTop h2{
- margin:0;
- font-size:24px;
- letter-spacing:-.7px;
-}
-.sectionTop p{
- margin:5px 0 0;
- color:#72798e;
- font-size:12px;
-}
-.see{
- color:#9589ff;
- font-size:12px;
- cursor:pointer;
-}
-
-/* FEATURE CARD */
-.feature{
- min-height:260px;
- border-radius:25px;
- overflow:hidden;
- position:relative;
- background:
- linear-gradient(90deg,#15172a 0%,rgba(21,23,42,.7) 42%,rgba(21,23,42,.15)),
- linear-gradient(120deg,#3c2d72,#111321);
- border:1px solid rgba(255,255,255,.07);
-}
-.feature:after{
- content:"";
- position:absolute;
- right:0;
- top:0;
- width:55%;
- height:100%;
- background:
- radial-gradient(circle at 50% 50%,rgba(255,61,129,.3),transparent 30%),
- linear-gradient(135deg,transparent,#755cff33);
-}
-.featureText{
- position:relative;
- z-index:2;
- padding:36px;
- max-width:600px;
-}
-.featureText small{
- color:#ff78a8;
- font-weight:800;
- text-transform:uppercase;
- letter-spacing:2px;
-}
-.featureText h2{
- font-size:34px;
- margin:10px 0;
-}
-.featureText p{
- color:#a4a9ba;
- line-height:1.6;
- font-size:13px;
-}
-.playFeature{
- display:inline-flex;
- align-items:center;
- gap:9px;
- margin-top:10px;
- padding:11px 17px;
- border-radius:10px;
- border:0;
- color:#fff;
- background:#fff1;
-}
-
-/* CAROUSEL */
-.row{
- display:flex;
- gap:15px;
- overflow-x:auto;
- padding-bottom:10px;
- scrollbar-width:none;
-}
-.row::-webkit-scrollbar{display:none}
-.card{
- flex:0 0 250px;
- border-radius:17px;
- overflow:hidden;
- background:#111321;
- border:1px solid rgba(255,255,255,.07);
- transition:.3s;
-}
-.card:hover{
- transform:translateY(-7px) scale(1.015);
- border-color:rgba(117,92,255,.5);
- box-shadow:0 18px 40px rgba(0,0,0,.35);
-}
-.thumb{
- height:145px;
- position:relative;
- overflow:hidden;
- cursor:pointer;
- background:#1a1d2d;
-}
-.thumb img{
- width:100%;
- height:100%;
- object-fit:cover;
- transition:.35s;
-}
-.card:hover .thumb img{transform:scale(1.08)}
-.thumb:after{
- content:"";
- position:absolute;
- inset:0;
- background:linear-gradient(to top,rgba(0,0,0,.5),transparent 60%);
-}
-.play{
- position:absolute;
- z-index:2;
- inset:0;
- display:grid;
- place-items:center;
-}
-.play span{
- width:48px;
- height:48px;
- border-radius:50%;
- display:grid;
- place-items:center;
- background:rgba(255,255,255,.92);
- color:#755cff;
- opacity:0;
- transform:scale(.7);
- transition:.25s;
-}
-.card:hover .play span{
- opacity:1;
- transform:scale(1);
-}
-.cardInfo{
- padding:14px;
-}
-.cardInfo h3{
- margin:0 0 6px;
- font-size:13px;
- line-height:1.35;
-}
-.meta{
- color:#747b90;
- font-size:11px;
- display:flex;
- justify-content:space-between;
-}
-.tag{
- display:inline-block;
- margin-top:10px;
- padding:5px 8px;
- border-radius:6px;
- color:#b8adff;
- background:#755cff18;
- font-size:9px;
-}
-.fav{
- float:right;
- background:none;
- color:#6f7588;
- font-size:18px;
-}
-.fav.active{color:#ff4d8a}
-
-/* SEARCH RESULTS */
-#results{
- display:none;
- padding-top:110px;
- min-height:100vh;
-}
-
-/* FOOTER */
-footer{
- border-top:1px solid rgba(255,255,255,.07);
- padding:35px 6%;
- color:#656c80;
- font-size:12px;
- display:flex;
- justify-content:space-between;
-}
-
-/* MODAL */
-.modalBg{
- position:fixed;
- inset:0;
- z-index:500;
- background:rgba(0,0,0,.78);
- backdrop-filter:blur(12px);
- display:none;
- align-items:center;
- justify-content:center;
- padding:20px;
-}
-.modalBg.show{display:flex}
-.modal{
- width:min(950px,100%);
- background:#111321;
- border:1px solid rgba(255,255,255,.1);
- border-radius:20px;
- overflow:hidden;
- box-shadow:0 30px 100px #000;
-}
-.modalHead{
- height:60px;
- display:flex;
- align-items:center;
- justify-content:space-between;
- padding:0 18px;
- border-bottom:1px solid rgba(255,255,255,.08);
-}
-.close{
- width:35px;
- height:35px;
- border-radius:9px;
- border:0;
- background:#ffffff0d;
- color:#fff;
- font-size:20px;
-}
-.player{
- aspect-ratio:16/9;
- background:#000;
-}
-.player iframe{
- width:100%;
- height:100%;
- border:0;
-}
-.modalInfo{
- padding:18px;
-}
-.modalInfo h2{margin:0 0 6px}
-.modalInfo p{margin:0;color:#858ca0}
-
-/* ADD */
-.addForm{
- padding:22px;
-}
-.field{margin-bottom:15px}
-.field label{
- display:block;
- color:#8f96a9;
- font-size:10px;
- font-weight:bold;
- margin-bottom:7px;
- letter-spacing:1px;
-}
-.field input,.field select{
- width:100%;
- padding:12px;
- background:#080a12;
- color:#fff;
- border:1px solid #252a3a;
- border-radius:10px;
- outline:0;
-}
-.formActions{
- display:flex;
- justify-content:flex-end;
- gap:9px;
-}
-.cancel{
- padding:11px 16px;
- border-radius:10px;
- border:0;
- background:#ffffff0d;
- color:#fff;
-}
-.save{
- padding:11px 18px;
- border-radius:10px;
- border:0;
- background:linear-gradient(135deg,#ff3d81,#755cff);
- color:#fff;
- font-weight:bold;
-}
-
-/* MOBILE */
-@media(max-width:900px){
- nav{display:none}
- .search{width:180px}
- .heroOrb{right:-180px;opacity:.55}
-}
-@media(max-width:600px){
- header{height:65px;padding:0 15px;gap:8px}
- .brand{font-size:17px}
- .brandIcon{width:32px;height:32px}
- .headerRight{gap:5px}
- .search{width:42px;padding:0 11px}
- .search input{display:none}
- .mobileBtn{display:block}
- .hero{
-  min-height:680px;
-  padding:145px 20px 80px;
- }
- .hero h1{font-size:49px;letter-spacing:-3px}
- .heroOrb{
-  width:300px;
-  height:300px;
-  right:-100px;
-  top:270px;
-  opacity:.4;
- }
- .content{padding:0 20px 60px}
- .featureText{padding:25px}
- .featureText h2{font-size:25px}
- .card{flex-basis:220px}
- footer{flex-direction:column;gap:10px}
-}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,Segoe UI,Arial,sans-serif}
+header{background:linear-gradient(120deg,#6558ed,#a16bfa,#ff78aa);color:white;padding:22px 5%;position:relative;overflow:hidden}
+.top{max-width:1300px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:15px;flex-wrap:wrap}
+.logo{font-size:27px;font-weight:900;letter-spacing:-1px}.logo span{color:#ffe16c}
+.tagline{font-size:13px;opacity:.9;margin-top:3px}
+.header-pill{background:#ffffff25;border:1px solid #ffffff55;padding:10px 15px;border-radius:25px;font-size:13px}
+.hero{max-width:1300px;margin:28px auto 10px;padding:0 5% 15px}
+.hero h1{font-size:clamp(30px,5vw,51px);line-height:1.08;margin:0 0 12px;letter-spacing:-1.5px}
+.hero p{max-width:620px;line-height:1.6;margin:0;color:#ffffffed}
+main{max-width:1300px;margin:auto;padding:24px 5% 50px}
+.searchrow{display:flex;gap:10px;margin-bottom:20px}
+.searchbox{flex:1;display:flex;align-items:center;background:white;border:1px solid #e6e7f2;border-radius:16px;padding:0 15px;box-shadow:0 5px 20px #25245a08}
+.searchbox span{font-size:20px}
+.searchbox input{width:100%;min-width:0;padding:16px 12px;border:0;outline:0;background:transparent;font-size:15px;color:var(--ink)}
+.btn{border:0;border-radius:13px;padding:13px 17px;background:var(--primary);color:white;font-weight:800;cursor:pointer}
+.btn:hover{filter:brightness(1.08);transform:translateY(-1px)}
+.filters{display:flex;gap:9px;flex-wrap:wrap;margin-bottom:26px}
+.filter{border:1px solid #e7e7f4;background:white;color:#606681;border-radius:30px;padding:10px 16px;font-weight:750;cursor:pointer}
+.filter.active{background:var(--primary);color:white;border-color:var(--primary)}
+.sectionhead{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:12px 0 18px}
+.sectionhead h2{margin:0;font-size:23px;letter-spacing:-.6px}
+.small{font-size:13px;color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}
+.video-card{min-width:0;background:var(--card);border-radius:19px;overflow:hidden;border:1px solid #ececf5;box-shadow:0 6px 25px #25245a08;transition:transform .2s,box-shadow .2s}
+.video-card:hover{transform:translateY(-4px);box-shadow:0 14px 32px #25245a13}
+.thumb{position:relative;display:block;width:100%;aspect-ratio:16/9;border:0;padding:0;background:#e8e7ff;cursor:pointer;overflow:hidden}
+.thumb img{display:block;width:100%;height:100%;object-fit:cover}
+.play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:52px;height:52px;border-radius:50%;background:#ffffffed;color:#6558ed;display:grid;place-items:center;font-size:21px;box-shadow:0 5px 20px #0002}
+.cardbody{padding:13px}
+.cardtitle{font-size:15px;line-height:1.35;font-weight:850;margin:0 0 8px;min-height:40px}
+.cardmeta{display:flex;justify-content:space-between;align-items:center;gap:6px}
+.category{font-size:11px;font-weight:800;background:#f0efff;color:#6558ed;padding:6px 9px;border-radius:20px;white-space:nowrap}
+.favorite{background:#fff1f6;color:#e84c85;border:0;border-radius:10px;padding:7px 10px;cursor:pointer;font-size:17px}
+.favorite.saved{background:#ffe0ec}
+.empty{background:white;padding:40px 15px;text-align:center;border-radius:18px;color:var(--muted);grid-column:1/-1}
+.morewrap{text-align:center;padding:30px 0}
+footer{text-align:center;padding:28px 5%;background:#232344;color:#d9d9f1;font-size:13px;line-height:1.8}
+footer strong{color:white}
+.modal{display:none;position:fixed;inset:0;background:#101024eF;z-index:20;align-items:center;justify-content:center;padding:16px}
+.modal.open{display:flex}
+.modalbox{width:min(900px,100%);background:#17172c;border-radius:18px;overflow:hidden;box-shadow:0 20px 80px #0006}
+.modalhead{display:flex;align-items:center;justify-content:space-between;gap:12px;color:white;padding:13px 16px}
+.modalhead h3{font-size:15px;margin:0}
+.close{border:0;border-radius:10px;background:#ffffff20;color:white;font-size:24px;width:40px;height:40px;cursor:pointer}
+.player{width:100%;aspect-ratio:16/9;border:0;display:block;background:#000}
+.note{font-size:12px;color:var(--muted);margin-top:20px;line-height:1.7}
+@media(max-width:1000px){.grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}}
+@media(max-width:700px){.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}main{padding-left:4%;padding-right:4%}.hero{padding-left:4%;padding-right:4%}.cardbody{padding:10px}.cardtitle{font-size:13px;min-height:35px}.category{font-size:10px;padding:5px 7px}.favorite{padding:6px 8px}.logo{font-size:24px}}
+@media(max-width:380px){.grid{grid-template-columns:1fr}.thumb{aspect-ratio:16/9}.searchrow .btn{padding:12px}}
 </style>
 </head>
-
 <body>
 
-<div class="bg"></div>
-
-<!-- PREMIUM INTRO -->
-<div id="intro">
- <div class="introGlow"></div>
- <div class="introLogo">
-  <div class="playLogo">▶</div>
-  <h1>KidsTube</h1>
-  <p>Play • Learn • Explore</p>
- </div>
- <div class="introLine"></div>
-</div>
-
-
 <header>
-
- <div class="brand">
-  <div class="brandIcon">▶</div>
-  KidsTube
- </div>
-
- <nav>
-  <a class="active" onclick="goHome()">Home</a>
-  <a onclick="showCategory('Kids')">Kids</a>
-  <a onclick="showCategory('Learning')">Learning</a>
-  <a onclick="showCategory('Music')">Music</a>
-  <a onclick="showCategory('Vehicles')">Vehicles</a>
- </nav>
-
- <div class="headerRight">
-
-  <div class="search">
-   <span>⌕</span>
-   <input id="searchInput" placeholder="Search...">
+  <div class="top">
+    <div>
+      <div class="logo">🌈 Kids<span>Tube</span></div>
+      <div class="tagline">Little videos. Big smiles. Endless learning.</div>
+    </div>
+    <div class="header-pill">🎈 A fun video world for kids</div>
   </div>
-
-  <button class="circleBtn" onclick="openAdd()">＋</button>
-
- </div>
-
+  <div class="hero">
+    <h1>Explore. Learn.<br>Have fun! ✨</h1>
+    <p>Discover cartoons, nursery rhymes, educational videos, favorite characters and more in one colorful video library.</p>
+  </div>
 </header>
 
-
-<main id="home">
-
-<section class="hero">
-
- <div class="heroContent">
-
-  <div class="kicker">
-   <i></i>
-   PREMIUM KIDS STREAMING
+<main>
+  <div class="searchrow">
+    <label class="searchbox">
+      <span>🔎</span>
+      <input id="search" type="search" placeholder="Search videos or channels..." aria-label="Search videos">
+    </label>
+    <button class="btn" id="searchBtn">Search</button>
   </div>
 
-  <h1>
-   Big stories.<br>
-   <span>Bright minds.</span>
-  </h1>
-
-  <p>
-   A colorful place for kids to discover fun videos,
-   music, learning adventures and family-friendly entertainment.
-  </p>
-
-  <div class="heroButtons">
-   <button class="primary" onclick="scrollToVideos()">▶ Explore Videos</button>
-   <button class="secondary" onclick="showCategory('Learning')">Explore Learning</button>
+  <div class="filters" id="filters">
+    <button class="filter active" data-filter="All">✨ All Videos</button>
+    <button class="filter" data-filter="Kids">🧸 Kids</button>
+    <button class="filter" data-filter="Learning">📚 Learning</button>
+    <button class="filter" data-filter="Music">🎵 Music</button>
+    <button class="filter" data-filter="Vehicles">🚗 Vehicles</button>
+    <button class="filter" data-filter="Favorites">❤️ Favorites</button>
   </div>
 
- </div>
-
- <div class="heroOrb">
-  <div class="orbRing"></div>
- </div>
-
-</section>
-
-
-<div class="content">
-
-<section class="feature">
-
- <div class="featureText">
-  <small>Featured Collection</small>
-  <h2>Learn something new today.</h2>
-  <p>
-   Discover educational adventures, numbers, letters,
-   stories and creative videos made for curious young minds.
-  </p>
-  <button class="playFeature" onclick="showCategory('Learning')">
-   Explore Collection →
-  </button>
- </div>
-
-</section>
-
-
-<section class="section" id="videos">
-
- <div class="sectionTop">
-  <div>
-   <h2>🔥 Trending Now</h2>
-   <p>Popular videos from your collection</p>
+  <div class="sectionhead">
+    <h2 id="sectionTitle">Discover Videos 🌟</h2>
+    <span class="small" id="count"></span>
   </div>
-  <span class="see" onclick="showAll()">View all</span>
- </div>
 
- <div class="row" id="trendingRow"></div>
-
-</section>
-
-
-<section class="section">
-
- <div class="sectionTop">
-  <div>
-   <h2>📚 Learn & Discover</h2>
-   <p>Educational videos for curious minds</p>
-  </div>
-  <span class="see" onclick="showCategory('Learning')">See all</span>
- </div>
-
- <div class="row" id="learningRow"></div>
-
-</section>
-
-
-<section class="section">
-
- <div class="sectionTop">
-  <div>
-   <h2>🎵 Music & Songs</h2>
-   <p>Sing, dance and have fun</p>
-  </div>
-  <span class="see" onclick="showCategory('Music')">See all</span>
- </div>
-
- <div class="row" id="musicRow"></div>
-
-</section>
-
-
-<section class="section">
-
- <div class="sectionTop">
-  <div>
-   <h2>🧸 Kids Favorites</h2>
-   <p>Fun cartoons and family-friendly videos</p>
-  </div>
-  <span class="see" onclick="showCategory('Kids')">See all</span>
- </div>
-
- <div class="row" id="kidsRow"></div>
-
-</section>
-
-</div>
-
+  <div class="grid" id="grid"></div>
+  <div class="morewrap"><button class="btn" id="more">Load More Videos ↓</button></div>
+  <p class="note">Videos are played through YouTube. Some videos may be unavailable, restricted, or may not allow embedded playback. This website is a video directory and is not affiliated with the listed channels.</p>
 </main>
 
-
-<!-- SEARCH / CATEGORY RESULTS -->
-
-<section id="results">
- <div class="content">
-
-  <div class="sectionTop">
-   <div>
-    <h2 id="resultTitle">Videos</h2>
-    <p id="resultSub">Explore the collection</p>
-   </div>
-   <span class="see" onclick="goHome()">← Home</span>
-  </div>
-
-  <div class="row" id="resultGrid"
-       style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));overflow:visible">
-  </div>
-
- </div>
-</section>
-
-
 <footer>
- <span>© 2026 KidsTube Studio</span>
- <span>Play • Learn • Explore</span>
+  <strong>🌈 KidsTube</strong><br>
+  A colorful place for kids' entertainment and learning.<br>
+  Parents should help children choose age-appropriate videos.<br>
+  © <span id="year"></span> KidsTube
 </footer>
 
-
-<!-- PLAYER MODAL -->
-
-<div class="modalBg" id="playerModal">
-
- <div class="modal">
-
-  <div class="modalHead">
-   <strong>Now Playing</strong>
-   <button class="close" onclick="closePlayer()">×</button>
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-label="Video player">
+  <div class="modalbox">
+    <div class="modalhead">
+      <h3 id="modalTitle">Now Playing</h3>
+      <button class="close" id="close" aria-label="Close video">×</button>
+    </div>
+    <iframe class="player" id="player" title="YouTube video player"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
   </div>
-
-  <div class="player">
-   <iframe id="frame"
-    allow="autoplay; encrypted-media; picture-in-picture"
-    allowfullscreen>
-   </iframe>
-  </div>
-
-  <div class="modalInfo">
-   <h2 id="modalTitle"></h2>
-   <p id="modalMeta"></p>
-  </div>
-
- </div>
-
 </div>
-
-
-<!-- ADD VIDEO MODAL -->
-
-<div class="modalBg" id="addModal">
-
- <div class="modal" style="max-width:560px">
-
-  <div class="modalHead">
-   <strong>Add Video</strong>
-   <button class="close" onclick="closeAdd()">×</button>
-  </div>
-
-  <div class="addForm">
-
-   <div class="field">
-    <label>TITLE</label>
-    <input id="newTitle" placeholder="Video title">
-   </div>
-
-   <div class="field">
-    <label>YOUTUBE URL OR VIDEO ID</label>
-    <input id="newUrl" placeholder="https://youtube.com/watch?v=...">
-   </div>
-
-   <div class="field">
-    <label>CHANNEL</label>
-    <input id="newChannel" placeholder="Channel name">
-   </div>
-
-   <div class="field">
-    <label>CATEGORY</label>
-    <select id="newCategory">
-     <option>Kids</option>
-     <option>Learning</option>
-     <option>Music</option>
-     <option>Vehicles</option>
-    </select>
-   </div>
-
-   <div class="formActions">
-    <button class="cancel" onclick="closeAdd()">Cancel</button>
-    <button class="save" onclick="saveVideo()">Add Video</button>
-   </div>
-
-  </div>
-
- </div>
-
-</div>
-
 
 <script>
-
-/* ===============================
-   VIDEO DATABASE
-================================ */
-
-const groups=[
-
-["Vehicles","Kids Vehicles","Emergency Vehicles",[
-"OhzbUI6dMeE","cXSI8dM70xc","2mhdhgtx-94","XNAcJtYG7rI","sBGAmjtKIok",
-"oPwe10JlrNc","mUonf7hWgVY","amrKjLOsNJE","nJBVTRKUMLY","H0BoQN5RXEU",
-"X2rxU3_Y75I","rfGxTNjUi4M","v_qsBssBovI"]],
-
-["Learning","Ms Rachel","Toddler Learning",[
-"jBvzOfT8_44","hTqtGJwsJVE","K_Aq4H03Nm4","gngPQ771Ahk","bOiYN7iU-W8"]],
-
-["Learning","Blippi","Blippi Learning",[
-"0IOy1HZZ2nw","-VA-DKxxio0","Gh-XKNuvvC4","v2id3D31u0o","KLUnWA2RKg0"]],
-
-["Kids","Peppa Pig","Peppa Pig",[
-"9qShcQMq1cA","cIi7WKizZpI","GtX2mHnR0Fc","uJ-8ooJKZXo","zeSczE6vc4c"]],
-
-["Learning","Sesame Street","Sesame Street",[
-"crQpStMwnwk","Py2f38iPBeI","09AmpC7oKGU","0b-v-wMR69k","fZ9WiuJPnNA"]],
-
-["Learning","Numberblocks","Numberblocks",[
-"ebQX7uQ6Zak","znL9An29uis","w4zGbQ5Akqo","yj5p0-uGR5U","FG18571ruVQ"]],
-
-["Learning","Alphablocks","Alphablocks",[
-"xg4_gWt8N_Q","s7LjGDcXqcs","9HKbQ1QyLaU","wpoHQN2X8mM","VxBEmaaSh1c"]],
-
-["Kids","PAW Patrol","PAW Patrol",[
-"S-lkBBl-KG4","0GbHgBMgDCo","9jRYrzvpt4s","ueKOOFBCqQQ","EB90SQ6Ugj4"]],
-
-["Kids","Pocoyo","Pocoyo",[
-"swVI1aYW8E0","tqAf9tFW00Y","WDQl4w-n9IE","6NlJMl1asew","QUt4TosgRNs"]],
-
-["Music","Super Simple Songs","Kids Songs",[
-"2S__fbCGwOM","LrAtBtQnvCE","9mmF8zOlh_g","OzKY5YHnOTg","6916kVhbEZw"]],
-
-["Music","Pinkfong","Pinkfong Kids Songs",[
-"XqZsoesa55w","4bMOTTJqGgM","R93ce4FZGbc","6x-sd-HHrpI","020g-0hhCAU"]],
-
-["Music","Dave and Ava","Nursery Rhymes",[
-"IBpJmnHWRVI","mHLLclRQ10o","JTIXGdsM73M","isidNk0Ppkw","p1f7cs4Gv2Y"]],
-
-["Music","Little Baby Bum","Nursery Rhymes",[
-"tFoUuFq3vHw","HBxB0QkyiGU","emC3qoSyfnQ","Vx3RFjQEqt0",
-"WSC-gHBU_d0","cTXMF_c4afw","TBRdYaYTs18","39IV1dtwCXs"]],
-
-["Kids","Vlad and Niki","Vlad and Niki",[
-"Wyd9cYmLZ10","5MKDkbhQDoc","ZTc991t51d4","M8fEj77zdfw","TUNUbGf42XM"]],
-
-["Kids","Kids Diana Show","Kids Diana",[
-"WE-peDdaA-w","E4_JfDd7yVE","QsaATI1BoCg","mOD-tCVV5SM","0_SztpoCoJ8"]],
-
-["Kids","Ryan's World","Ryan's World",[
-"xzaNqjc4fkE","SQUV705XWCU","J9pqVPGu1bY","VObZz6LquuY","1qjxk7gNX6M"]],
-
-["Learning","Kids Learning","Educational Videos",[
-"_UR-l3QI2nE","e_04ZrNroTo","WRVsOCh907o","ohHYABXMqUQ",
-"D1LDPmYoYm4","Wm4R8d0d8kU","HJkAI-Dhq50","GVPB671FZ1k",
-"Ser69-nsRNs","VD-ecJSUfZ0","71h8MZshGSs","qXcMNBQnQMM",
-"DruYNHN4FYY","9FDuUd39NOI","uiwOgoi3E_w","bPZ_r55v8us","h_aq-9uRGPU"]],
-
-["Music","CoComelon","CoComelon Kids Songs",[
-"KPdgH4ZBxA4","UCFxJIYgCtQ","vTLfOqEolsk","rHjhg_w09_c",
-"TloXEcbCF8Q","8qvHQIJ4Y3k","6h-TOlUPxEI","Cbft7FoMGFk"]],
-
-["Kids","Kids Videos","Kids Fun",[
-"Xw3-3jQQMBk","aP-qKaig84M","wpTjh83mL0k","TU0-HHvUz7M","wXLBNFd1xro"]]
-
+const groups = [
+["Vehicles","Kids Vehicles","Emergency Vehicles",["OhzbUI6dMeE","cXSI8dM70xc","2mhdhgtx-94","XNAcJtYG7rI","sBGAmjtKIok","oPwe10JlrNc","mUonf7hWgVY","amrKjLOsNJE","nJBVTRKUMLY","H0BoQN5RXEU","X2rxU3_Y75I","rfGxTNjUi4M","v_qsBssBovI"]],
+["Learning","Ms Rachel","Toddler Learning",["jBvzOfT8_44","hTqtGJwsJVE","K_Aq4H03Nm4","gngPQ771Ahk","bOiYN7iU-W8"]],
+["Learning","Blippi","Blippi Learning",["0IOy1HZZ2nw","-VA-DKxxio0","Gh-XKNuvvC4","v2id3D31u0o","KLUnWA2RKg0"]],
+["Kids","Peppa Pig","Peppa Pig",["9qShcQMq1cA","cIi7WKizZpI","GtX2mHnR0Fc","uJ-8ooJKZXo","zeSczE6vc4c"]],
+["Learning","Sesame Street","Sesame Street",["crQpStMwnwk","Py2f38iPBeI","09AmpC7oKGU","0b-v-wMR69k","fZ9WiuJPnNA"]],
+["Learning","Numberblocks","Numberblocks",["ebQX7uQ6Zak","znL9An29uis","w4zGbQ5Akqo","yj5p0-uGR5U","FG18571ruVQ"]],
+["Learning","Alphablocks","Alphablocks",["xg4_gWt8N_Q","s7LjGDcXqcs","9HKbQ1QyLaU","wpoHQN2X8mM","VxBEmaaSh1c"]],
+["Kids","PAW Patrol","PAW Patrol",["S-lkBBl-KG4","0GbHgBMgDCo","9jRYrzvpt4s","ueKOOFBCqQQ","EB90SQ6Ugj4"]],
+["Kids","Pocoyo","Pocoyo",["swVI1aYW8E0","tqAf9tFW00Y","WDQl4w-n9IE","6NlJMl1asew","QUt4TosgRNs"]],
+["Music","Super Simple Songs","Kids Songs",["2S__fbCGwOM","LrAtBtQnvCE","9mmF8zOlh_g","OzKY5YHnOTg","6916kVhbEZw"]],
+["Music","Pinkfong","Pinkfong Kids Songs",["XqZsoesa55w","4bMOTTJqGgM","R93ce4FZGbc","6x-sd-HHrpI","020g-0hhCAU"]],
+["Music","Dave and Ava","Nursery Rhymes",["IBpJmnHWRVI","mHLLclRQ10o","JTIXGdsM73M","isidNk0Ppkw","p1f7cs4Gv2Y"]],
+["Music","Little Baby Bum","Nursery Rhymes",["tFoUuFq3vHw","HBxB0QkyiGU","emC3qoSyfnQ","Vx3RFjQEqt0","WSC-gHBU_d0","cTXMF_c4afw","TBRdYaYTs18","39IV1dtwCXs"]],
+["Kids","Vlad and Niki","Vlad and Niki",["Wyd9cYmLZ10","5MKDkbhQDoc","ZTc991t51d4","M8fEj77zdfw","TUNUbGf42XM"]],
+["Kids","Kids Diana Show","Kids Diana",["WE-peDdaA-w","E4_JfDd7yVE","QsaATI1BoCg","mOD-tCVV5SM","0_SztpoCoJ8"]],
+["Kids","Ryan's World","Ryan's World",["xzaNqjc4fkE","SQUV705XWCU","J9pqVPGu1bY","VObZz6LquuY","1qjxk7gNX6M"]],
+["Learning","Kids Learning","Educational Videos",["_UR-l3QI2nE","e_04ZrNroTo","WRVsOCh907o","ohHYABXMqUQ","D1LDPmYoYm4","Wm4R8d0d8kU","HJkAI-Dhq50","GVPB671FZ1k","Ser69-nsRNs","VD-ecJSUfZ0","71h8MZshGSs","qXcMNBQnQMM","DruYNHN4FYY","9FDuUd39NOI","uiwOgoi3E_w","bPZ_r55v8us","h_aq-9uRGPU"]],
+["Music","CoComelon","CoComelon Kids Songs",["KPdgH4ZBxA4","UCFxJIYgCtQ","vTLfOqEolsk","rHjhg_w09_c","TloXEcbCF8Q","8qvHQIJ4Y3k","6h-TOlUPxEI","Cbft7FoMGFk"]],
+["Kids","Kids Videos","Kids Fun",["Xw3-3jQQMBk","aP-qKaig84M","wpTjh83mL0k","TU0-HHvUz7M","wXLBNFd1xro"]],
+["Kids","Mom's New Videos","Mom's Collection Part 1",[
+"ybLEIWIoNn0","CGjRPy31uZE","0w5htxelGlY","N3Eh4a3PrZs","GSlAAO4sqqw",
+"qnM87-NLTp8","vVM243RSKxc","hX-N2IhQxUc","g36jg5hEYo8","_mQq660iRnU",
+"S84fHUZdOGs","8EZeNbP47yo","rZ02ANqhJnQ","B3ddiZGZqt8","FD9m3sda_gA",
+"-oPTbI-t-44","pphyDw50jsE","n9pp51CPzoc","wOOtC2z9fhU","TsdpcbQ3nX0"
+]],
+["Kids","Mom's New Videos","Mom's Collection Part 2",[
+"qYaHoiUK0sc","68pnAMQSj4Y","LZ5_2p5mRWM","urqWcUPdD80","AYUhUZlT-Hg",
+"sJSGEQgAYWg","NrX9To4bjFk","GkQmkZNLCeM","9_WBQISVHnw","gSqCz4aiqSs",
+"G1Lxvkf4T9Y","gzzl6JgTR1k","EN1SJT76JoY","rPe4yziWiOg","drkOBuiGPCM",
+"k1H6sWnrI2Y","evXG5HuwIn0","TPvTK-S_VR4","WN1FhKMgeLU","c5YdpZjW-dc",
+"M0VUAh1ST0U","jXHOHOYkbYc","saFXih4TvE4","05dcZUK_k7I","tVJGMP96_zo",
+"PhMa7ZthMBc","NUMz00m8ySk","KMc6DyEJp04","pZw9veQ76fo","LLsqo5THFAE",
+"COIw9e834Ag","FXjC69MmcPY","ILPjPIFNsRA","jMJk9q6miG4","kIoD2MPKVrw",
+"WhrQ1HHy7S8","15esmSD8mIY","07d2dXHYb94","QZPXhjxy2HY","bZFjXrMOENc",
+"CaBEdunlaOU","M6gWY5lS9KU","r2kNBcY1FQ8","gS3tTs4giM4","M_rH3Z_R6-U",
+"hFDL5FFHAuc","HI5upQGIqmY","FTHtY7AYnkI","SxpbRo_Zhjw","h_6d8InZ2D0",
+"f--hb5og_Fg","a3g1wjRLqQc","noCiE_1YRJo","U4gSKg8dL4Q","WOn8gdKrZzY",
+"FmUToko7EBY","mSEYTJZ4N_c","XhSvTHsNtVg","uCYJVRupJ9k","HaEmIakO7f4",
+"h4eueDYPTIg","5ajRc-YvLhg","U9b80qK3cs4","XJbowRRA9vA","EPEdlgzQqSc",
+"r7HuHApf7fA","iyjny2WAKcg","-WPPFUT8R44","kIijwsrIGy8","R2hYUzn44JE",
+"v-vqi0UaUdE","L96V9lOo8ec","0lS9btv3GVk","op4C2TypclE","2UcZWXvgMZE",
+"pqLDVLf5vgU","N33LzkTmk1A","aEOfldeB_tw","2fU7hNobOjo","Ih_swD45rcg",
+"NAKctif7Nyo","MGhMShAXsHM","-OVGSISs-WA","DSSjGSoFfk0","qq37Jfxa2ig",
+"bMuVqRat-Ek","c4YCDmbgrX0","9aFZQ2whcSM","uziL1iumlMU","EAx6VZteAwQ",
+"A5gwWI8MnC4","8VCpa4blanQ","DsUPVERZFlI","zUTZEk32tc8","c-v-7JRisLA",
+"UdrG_UUNacY","wg6IPPW-RpU","y4bRAYwi8Lo","RqMsnv-mcRQ","TeP1QMtmAjs",
+"VXokId-v7oU"
+]]
 ];
 
+// Create a searchable library and automatically remove duplicate video IDs.
+const videos = [];
+const seen = new Set();
 
-let videos=[];
-
-groups.forEach(g=>{
- const [category,channel,tags,ids]=g;
- ids.forEach((id,i)=>{
-  videos.push({
-   id,
-   category,
-   channel,
-   tags,
-   title:`${channel} • Kids Video ${i+1}`
+groups.forEach(([category, channel, description, ids]) => {
+  ids.forEach((id, index) => {
+    if (!id || seen.has(id)) return;
+    seen.add(id);
+    videos.push({
+      id, category, channel, description,
+      title: channel + " • Video " + (index + 1)
+    });
   });
- });
 });
 
+const grid = document.getElementById("grid");
+const search = document.getElementById("search");
+const count = document.getElementById("count");
+const title = document.getElementById("sectionTitle");
+const more = document.getElementById("more");
+const modal = document.getElementById("modal");
+const player = document.getElementById("player");
+const modalTitle = document.getElementById("modalTitle");
 
-let added=JSON.parse(localStorage.getItem("kidsTubeAdded")||"[]");
-let favorites=JSON.parse(localStorage.getItem("kidsTubeFav")||"[]");
+let activeFilter = "All";
+let visibleLimit = 24;
+let currentVideos = [];
+let favorites = new Set();
 
-videos=[...videos,...added];
+try {
+  favorites = new Set(JSON.parse(localStorage.getItem("kidstube-favorites") || "[]"));
+} catch(e) {}
 
+const categoryIcons = {
+  Kids:"🧸", Learning:"📚", Music:"🎵", Vehicles:"🚗"
+};
 
-/* ===============================
-   CARD
-================================ */
+function getFilteredVideos() {
+  const term = search.value.trim().toLowerCase();
 
-function card(v){
+  return videos.filter(v => {
+    const matchesFilter =
+      activeFilter === "All" ||
+      (activeFilter === "Favorites" && favorites.has(v.id)) ||
+      v.category === activeFilter;
 
- const active=favorites.includes(v.id);
+    const matchesSearch = !term ||
+      (v.channel + " " + v.title + " " + v.description + " " + v.id)
+      .toLowerCase().includes(term);
 
- return `
- <div class="card">
-
-  <div class="thumb" onclick="play('${v.id}')">
-
-   <img src="https://i.ytimg.com/vi/${v.id}/hqdefault.jpg"
-        loading="lazy">
-
-   <div class="play">
-    <span>▶</span>
-   </div>
-
-  </div>
-
-  <div class="cardInfo">
-
-   <button class="fav ${active?'active':''}"
-           onclick="event.stopPropagation();favorite('${v.id}')">
-    ${active?'♥':'♡'}
-   </button>
-
-   <h3>${escape(v.title)}</h3>
-
-   <div class="meta">
-    <span>${escape(v.channel)}</span>
-    <span>KidsTube</span>
-   </div>
-
-   <span class="tag">${escape(v.category)}</span>
-
-  </div>
-
- </div>`;
+    return matchesFilter && matchesSearch;
+  });
 }
 
-
-/* ===============================
-   HOME ROWS
-================================ */
-
-function renderHome(){
-
- const trending=videos.slice().reverse().slice(0,12);
- const learning=videos.filter(v=>v.category==="Learning").slice(0,12);
- const music=videos.filter(v=>v.category==="Music").slice(0,12);
- const kids=videos.filter(v=>v.category==="Kids").slice(0,12);
-
- document.getElementById("trendingRow").innerHTML=
-  trending.map(card).join("");
-
- document.getElementById("learningRow").innerHTML=
-  learning.map(card).join("");
-
- document.getElementById("musicRow").innerHTML=
-  music.map(card).join("");
-
- document.getElementById("kidsRow").innerHTML=
-  kids.map(card).join("");
+function saveFavorites() {
+  try {
+    localStorage.setItem("kidstube-favorites", JSON.stringify([...favorites]));
+  } catch(e) {}
 }
 
+function render() {
+  currentVideos = getFilteredVideos();
+  const shown = currentVideos.slice(0, visibleLimit);
 
-/* ===============================
-   PLAY
-================================ */
+  title.textContent = activeFilter === "Favorites"
+    ? "Your Favorite Videos ❤️"
+    : activeFilter === "All" ? "Discover Videos 🌟" : activeFilter + " Videos";
 
-function play(id){
+  count.textContent = currentVideos.length + " videos";
+  grid.innerHTML = "";
 
- const v=videos.find(x=>x.id===id);
- if(!v)return;
+  if (!shown.length) {
+    grid.innerHTML = '<div class="empty"><div style="font-size:36px">🔎</div><h3>No videos found</h3><p>Try another search or category.</p></div>';
+  } else {
+    const fragment = document.createDocumentFragment();
 
- document.getElementById("modalTitle").textContent=v.title;
- document.getElementById("modalMeta").textContent=
-   `${v.channel} • ${v.category}`;
+    shown.forEach(v => {
+      const card = document.createElement("article");
+      card.className = "video-card";
 
- document.getElementById("frame").src=
-   `https://www.youtube.com/embed/${id}?autoplay=1&rel=0`;
+      const thumb = document.createElement("button");
+      thumb.className = "thumb";
+      thumb.setAttribute("aria-label", "Play " + v.title);
 
- document.getElementById("playerModal").classList.add("show");
+      const img = document.createElement("img");
+      img.loading = "lazy";
+      img.alt = v.channel + " video thumbnail";
+      img.src = "https://i.ytimg.com/vi/" + encodeURIComponent(v.id) + "/hqdefault.jpg";
+      img.onerror = () => {
+        img.onerror = null;
+        img.src = "https://placehold.co/640x360/e9e7ff/6558ed?text=KidsTube";
+      };
+
+      const play = document.createElement("span");
+      play.className = "play";
+      play.textContent = "▶";
+      thumb.append(img, play);
+      thumb.addEventListener("click", () => openVideo(v));
+
+      const body = document.createElement("div");
+      body.className = "cardbody";
+
+      const h3 = document.createElement("h3");
+      h3.className = "cardtitle";
+      h3.textContent = v.title;
+
+      const meta = document.createElement("div");
+      meta.className = "cardmeta";
+
+      const badge = document.createElement("span");
+      badge.className = "category";
+      badge.textContent = (categoryIcons[v.category] || "🌈") + " " + v.category;
+
+      const fav = document.createElement("button");
+      fav.className = "favorite" + (favorites.has(v.id) ? " saved" : "");
+      fav.textContent = favorites.has(v.id) ? "♥" : "♡";
+      fav.title = favorites.has(v.id) ? "Remove from favorites" : "Add to favorites";
+      fav.setAttribute("aria-label", fav.title);
+      fav.addEventListener("click", () => {
+        if (favorites.has(v.id)) favorites.delete(v.id);
+        else favorites.add(v.id);
+        saveFavorites();
+        render();
+      });
+
+      meta.append(badge, fav);
+      body.append(h3, meta);
+      card.append(thumb, body);
+      fragment.append(card);
+    });
+
+    grid.append(fragment);
+  }
+
+  more.style.display = currentVideos.length > visibleLimit ? "inline-block" : "none";
 }
 
-function closePlayer(){
-
- document.getElementById("playerModal").classList.remove("show");
- document.getElementById("frame").src="";
+function openVideo(v) {
+  modalTitle.textContent = v.channel + " — " + v.title;
+  modal.classList.add("open");
+  player.src = "https://www.youtube-nocookie.com/embed/" +
+    encodeURIComponent(v.id) + "?autoplay=1&rel=0";
+  document.body.style.overflow = "hidden";
 }
 
-
-/* ===============================
-   FAVORITES
-================================ */
-
-function favorite(id){
-
- if(favorites.includes(id))
-  favorites=favorites.filter(x=>x!==id);
- else
-  favorites.push(id);
-
- localStorage.setItem("kidsTubeFav",JSON.stringify(favorites));
-
- renderHome();
-
- if(document.getElementById("results").style.display==="block")
-  renderResults(videos);
+function closeVideo() {
+  modal.classList.remove("open");
+  player.src = "";
+  document.body.style.overflow = "";
 }
 
+document.getElementById("close").addEventListener("click", closeVideo);
 
-/* ===============================
-   CATEGORY
-================================ */
-
-function showCategory(category){
-
- document.getElementById("home").style.display="none";
- document.getElementById("results").style.display="block";
-
- const list=videos.filter(v=>v.category===category);
-
- document.getElementById("resultTitle").textContent=category;
- document.getElementById("resultSub").textContent=
-   `Explore ${category} videos`;
-
- renderResults(list);
-
- window.scrollTo({top:0,behavior:"smooth"});
-}
-
-
-function showAll(){
-
- document.getElementById("home").style.display="none";
- document.getElementById("results").style.display="block";
-
- document.getElementById("resultTitle").textContent="All Videos";
- document.getElementById("resultSub").textContent=
-  `${videos.length} videos available`;
-
- renderResults(videos);
-
- window.scrollTo({top:0,behavior:"smooth"});
-}
-
-
-function renderResults(list){
-
- document.getElementById("resultGrid").innerHTML=
-  list.length
-   ? list.map(card).join("")
-   : `<div style="grid-column:1/-1;padding:50px;text-align:center;color:#777">
-       No videos found.
-      </div>`;
-}
-
-
-function goHome(){
-
- document.getElementById("home").style.display="block";
- document.getElementById("results").style.display="none";
-
- window.scrollTo({top:0,behavior:"smooth"});
-}
-
-
-/* ===============================
-   SEARCH
-================================ */
-
-document.getElementById("searchInput").addEventListener("input",e=>{
-
- const q=e.target.value.toLowerCase().trim();
-
- if(!q){
-  goHome();
-  return;
- }
-
- document.getElementById("home").style.display="none";
- document.getElementById("results").style.display="block";
-
- const list=videos.filter(v=>
-  v.title.toLowerCase().includes(q) ||
-  v.channel.toLowerCase().includes(q) ||
-  v.category.toLowerCase().includes(q) ||
-  v.tags.toLowerCase().includes(q)
- );
-
- document.getElementById("resultTitle").textContent=
-  `Search: ${e.target.value}`;
-
- document.getElementById("resultSub").textContent=
-  `${list.length} results`;
-
- renderResults(list);
+modal.addEventListener("click", e => {
+  if (e.target === modal) closeVideo();
 });
 
+document.addEventListener("keydown", e => {
+  if (e.key === "Escape") closeVideo();
+});
 
-/* ===============================
-   ADD VIDEO
-================================ */
+document.getElementById("filters").addEventListener("click", e => {
+  const btn = e.target.closest(".filter");
+  if (!btn) return;
 
-function openAdd(){
- document.getElementById("addModal").classList.add("show");
-}
+  activeFilter = btn.dataset.filter;
+  visibleLimit = 24;
 
-function closeAdd(){
- document.getElementById("addModal").classList.remove("show");
-}
+  document.querySelectorAll(".filter").forEach(b => {
+    b.classList.toggle("active", b === btn);
+  });
 
-function getId(value){
+  render();
+});
 
- value=value.trim();
+search.addEventListener("input", () => {
+  visibleLimit = 24;
+  render();
+});
 
- if(/^[a-zA-Z0-9_-]{11}$/.test(value))
-  return value;
+document.getElementById("searchBtn").addEventListener("click", () => {
+  visibleLimit = 24;
+  render();
+});
 
- try{
+search.addEventListener("keydown", e => {
+  if (e.key === "Enter") {
+    visibleLimit = 24;
+    render();
+  }
+});
 
-  const u=new URL(value);
+more.addEventListener("click", () => {
+  visibleLimit += 24;
+  render();
+});
 
-  if(u.hostname.includes("youtu.be"))
-   return u.pathname.substring(1).split("/")[0];
-
-  if(u.searchParams.get("v"))
-   return u.searchParams.get("v");
-
-  const p=u.pathname.split("/");
-
-  if(p.includes("embed"))
-   return p[p.indexOf("embed")+1];
-
-  if(p.includes("shorts"))
-   return p[p.indexOf("shorts")+1];
-
- }catch(e){}
-
- return null;
-}
-
-
-function saveVideo(){
-
- const title=document.getElementById("newTitle").value.trim();
- const url=document.getElementById("newUrl").value.trim();
- const channel=document.getElementById("newChannel").value.trim()||"New Channel";
- const category=document.getElementById("newCategory").value;
-
- const id=getId(url);
-
- if(!title||!id){
-  alert("Please enter a title and valid YouTube URL.");
-  return;
- }
-
- const v={
-  id,title,channel,category,tags:"Added"
- };
-
- added.push(v);
-
- localStorage.setItem(
-  "kidsTubeAdded",
-  JSON.stringify(added)
- );
-
- videos.push(v);
-
- document.getElementById("newTitle").value="";
- document.getElementById("newUrl").value="";
- document.getElementById("newChannel").value="";
-
- closeAdd();
- renderHome();
-
- alert("Video added successfully!");
-}
-
-
-/* ===============================
-   HELPERS
-================================ */
-
-function escape(s){
-
- return String(s)
- .replaceAll("&","&amp;")
- .replaceAll("<","&lt;")
- .replaceAll(">","&gt;")
- .replaceAll('"',"&quot;")
- .replaceAll("'","&#039;");
-}
-
-function scrollToVideos(){
-
- document.getElementById("videos").scrollIntoView({
-  behavior:"smooth"
- });
-}
-
-
-/* ===============================
-   INITIALIZE
-================================ */
-
-renderHome();
-
+document.getElementById("year").textContent = new Date().getFullYear();
+render();
 </script>
-
 </body>
 </html>
