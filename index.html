@@ -11,376 +11,316 @@
   gtag('config', 'G-H4VF7WNZRR');
 </script>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>KidsTube - Fun & Learning</title>
-<meta name="description" content="A fun kids video library with nursery rhymes, cartoons, learning videos and more.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KidsTube - Fun Learning & Videos</title>
 <style>
-:root{--bg:#f6f8ff;--card:#fff;--ink:#202443;--muted:#777e98;--primary:#6558ed;--pink:#ff679c;--yellow:#ffd65a}
+:root{--purple:#7138e8;--pink:#ff5ca8;--bg:#f7f5ff;--text:#27213d;--card:#fff}
 *{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,Segoe UI,Arial,sans-serif}
-header{background:linear-gradient(120deg,#6558ed,#a16bfa,#ff78aa);color:white;padding:22px 5%;position:relative;overflow:hidden}
-.top{max-width:1300px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:15px;flex-wrap:wrap}
-.logo{font-size:27px;font-weight:900;letter-spacing:-1px}.logo span{color:#ffe16c}
-.tagline{font-size:13px;opacity:.9;margin-top:3px}
-.header-pill{background:#ffffff25;border:1px solid #ffffff55;padding:10px 15px;border-radius:25px;font-size:13px}
-.hero{max-width:1300px;margin:28px auto 10px;padding:0 5% 15px}
-.hero h1{font-size:clamp(30px,5vw,51px);line-height:1.08;margin:0 0 12px;letter-spacing:-1.5px}
-.hero p{max-width:620px;line-height:1.6;margin:0;color:#ffffffed}
-main{max-width:1300px;margin:auto;padding:24px 5% 50px}
-.searchrow{display:flex;gap:10px;margin-bottom:20px}
-.searchbox{flex:1;display:flex;align-items:center;background:white;border:1px solid #e6e7f2;border-radius:16px;padding:0 15px;box-shadow:0 5px 20px #25245a08}
-.searchbox span{font-size:20px}
-.searchbox input{width:100%;min-width:0;padding:16px 12px;border:0;outline:0;background:transparent;font-size:15px;color:var(--ink)}
-.btn{border:0;border-radius:13px;padding:13px 17px;background:var(--primary);color:white;font-weight:800;cursor:pointer}
-.btn:hover{filter:brightness(1.08);transform:translateY(-1px)}
-.filters{display:flex;gap:9px;flex-wrap:wrap;margin-bottom:26px}
-.filter{border:1px solid #e7e7f4;background:white;color:#606681;border-radius:30px;padding:10px 16px;font-weight:750;cursor:pointer}
-.filter.active{background:var(--primary);color:white;border-color:var(--primary)}
-.sectionhead{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:12px 0 18px}
-.sectionhead h2{margin:0;font-size:23px;letter-spacing:-.6px}
-.small{font-size:13px;color:var(--muted)}
-.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}
-.video-card{min-width:0;background:var(--card);border-radius:19px;overflow:hidden;border:1px solid #ececf5;box-shadow:0 6px 25px #25245a08;transition:transform .2s,box-shadow .2s}
-.video-card:hover{transform:translateY(-4px);box-shadow:0 14px 32px #25245a13}
-.thumb{position:relative;display:block;width:100%;aspect-ratio:16/9;border:0;padding:0;background:#e8e7ff;cursor:pointer;overflow:hidden}
-.thumb img{display:block;width:100%;height:100%;object-fit:cover}
-.play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:52px;height:52px;border-radius:50%;background:#ffffffed;color:#6558ed;display:grid;place-items:center;font-size:21px;box-shadow:0 5px 20px #0002}
-.cardbody{padding:13px}
-.cardtitle{font-size:15px;line-height:1.35;font-weight:850;margin:0 0 8px;min-height:40px}
-.cardmeta{display:flex;justify-content:space-between;align-items:center;gap:6px}
-.category{font-size:11px;font-weight:800;background:#f0efff;color:#6558ed;padding:6px 9px;border-radius:20px;white-space:nowrap}
-.favorite{background:#fff1f6;color:#e84c85;border:0;border-radius:10px;padding:7px 10px;cursor:pointer;font-size:17px}
-.favorite.saved{background:#ffe0ec}
-.empty{background:white;padding:40px 15px;text-align:center;border-radius:18px;color:var(--muted);grid-column:1/-1}
-.morewrap{text-align:center;padding:30px 0}
-footer{text-align:center;padding:28px 5%;background:#232344;color:#d9d9f1;font-size:13px;line-height:1.8}
-footer strong{color:white}
-.modal{display:none;position:fixed;inset:0;background:#101024eF;z-index:20;align-items:center;justify-content:center;padding:16px}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Arial,Helvetica,sans-serif}
+header{background:linear-gradient(120deg,#7138e8,#bb54ec,#ff65a7);color:white;padding:24px 5%;position:sticky;top:0;z-index:5;box-shadow:0 4px 20px #5134a522}
+.top{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.logo{font-size:28px;font-weight:900;letter-spacing:-1px}
+.logo span{color:#ffed7a}
+.search{flex:1;max-width:500px;display:flex;gap:8px}
+.search input{width:100%;border:0;border-radius:30px;padding:13px 18px;font-size:15px;outline:none}
+button{cursor:pointer;border:0;border-radius:24px;padding:11px 17px;font-weight:bold;transition:.2s}
+button:hover{transform:translateY(-2px)}
+.search button{background:#ffdf70;color:#38235e}
+.hero{padding:35px 5% 18px}
+.hero h1{font-size:clamp(28px,5vw,46px);margin:0 0 10px}
+.hero p{color:#69617e;line-height:1.6}
+.categories{display:flex;gap:9px;flex-wrap:wrap;padding:0 5% 22px}
+.categories button{background:white;color:#65577d}
+.categories button.active{background:var(--purple);color:white}
+main{padding:0 5% 45px}
+.section-title{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;margin-bottom:18px}
+.section-title h2{margin:0;font-size:23px}
+.count{font-size:13px;color:#7e7394}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:20px}
+.card{background:var(--card);border-radius:18px;overflow:hidden;box-shadow:0 5px 22px #45336b0c;transition:.25s;border:1px solid #eee8fa}
+.card:hover{transform:translateY(-5px);box-shadow:0 12px 30px #45336b18}
+.thumb{position:relative;aspect-ratio:16/9;background:#e8e0ff;overflow:hidden}
+.thumb img{width:100%;height:100%;object-fit:cover;display:block}
+.play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:48px;height:48px;border-radius:50%;background:#ffffffed;color:var(--purple);display:grid;place-items:center;font-size:21px}
+.card:hover .play{background:var(--pink);color:white}
+.card-content{padding:14px}
+.card h3{font-size:15px;line-height:1.45;margin:0 0 8px}
+.meta{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.tag{font-size:11px;background:#f0eaff;color:#7043c4;padding:6px 9px;border-radius:20px}
+.fav{background:#fff0f5;color:#dc4387;padding:7px 10px}
+.empty{padding:40px 10px;text-align:center;color:#807493;grid-column:1/-1}
+footer{text-align:center;padding:25px;color:#887d9e;font-size:13px}
+.modal{display:none;position:fixed;inset:0;background:#100a20ef;z-index:20;align-items:center;justify-content:center;padding:18px}
 .modal.open{display:flex}
-.modalbox{width:min(900px,100%);background:#17172c;border-radius:18px;overflow:hidden;box-shadow:0 20px 80px #0006}
-.modalhead{display:flex;align-items:center;justify-content:space-between;gap:12px;color:white;padding:13px 16px}
-.modalhead h3{font-size:15px;margin:0}
-.close{border:0;border-radius:10px;background:#ffffff20;color:white;font-size:24px;width:40px;height:40px;cursor:pointer}
-.player{width:100%;aspect-ratio:16/9;border:0;display:block;background:#000}
-.note{font-size:12px;color:var(--muted);margin-top:20px;line-height:1.7}
-@media(max-width:1000px){.grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}}
-@media(max-width:700px){.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}main{padding-left:4%;padding-right:4%}.hero{padding-left:4%;padding-right:4%}.cardbody{padding:10px}.cardtitle{font-size:13px;min-height:35px}.category{font-size:10px;padding:5px 7px}.favorite{padding:6px 8px}.logo{font-size:24px}}
-@media(max-width:380px){.grid{grid-template-columns:1fr}.thumb{aspect-ratio:16/9}.searchrow .btn{padding:12px}}
+.modal-box{background:white;width:min(900px,100%);border-radius:18px;overflow:hidden}
+.modal-head{padding:15px 18px;display:flex;justify-content:space-between;align-items:center;gap:10px}
+.modal-head h3{font-size:16px;margin:0}
+.close{background:#f1ebfb;color:#55338c;font-size:20px}
+.player{width:100%;aspect-ratio:16/9;background:#130c23}
+.player iframe{width:100%;height:100%;border:0}
+.notice{font-size:12px;color:#807493;padding:12px 18px}
+@media(max-width:600px){
+header{padding:17px 4%}.logo{font-size:24px}.hero{padding:27px 4% 14px}
+.categories{padding:0 4% 18px}main{padding:0 4% 35px}
+.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.card-content{padding:10px}.card h3{font-size:13px}.tag{font-size:10px}
+}
 </style>
 </head>
 <body>
 
 <header>
   <div class="top">
-    <div>
-      <div class="logo">🌈 Kids<span>Tube</span></div>
-      <div class="tagline">Little videos. Big smiles. Endless learning.</div>
-    </div>
-    <div class="header-pill">🎈 A fun video world for kids</div>
-  </div>
-  <div class="hero">
-    <h1>Explore. Learn.<br>Have fun! ✨</h1>
-    <p>Discover cartoons, nursery rhymes, educational videos, favorite characters and more in one colorful video library.</p>
+    <div class="logo">🌈 Kids<span>Tube</span></div>
+    <form class="search" id="searchForm">
+      <input id="searchInput" type="search" placeholder="Search videos..." aria-label="Search videos">
+      <button type="submit">Search</button>
+    </form>
   </div>
 </header>
 
+<section class="hero">
+  <h1>Big fun for little explorers! 🎈</h1>
+  <p>Discover cartoons, music, learning videos, vehicles and more, all in one colorful place.</p>
+</section>
+
+<nav class="categories" id="categories">
+  <button class="active" data-category="All">✨ All Videos</button>
+  <button data-category="Kids">🧸 Kids</button>
+  <button data-category="Learning">📚 Learning</button>
+  <button data-category="Music">🎵 Music</button>
+  <button data-category="Vehicles">🚗 Vehicles</button>
+  <button data-category="Fun">🎉 Fun</button>
+  <button data-category="Favorites">❤️ Favorites</button>
+</nav>
+
 <main>
-  <div class="searchrow">
-    <label class="searchbox">
-      <span>🔎</span>
-      <input id="search" type="search" placeholder="Search videos or channels..." aria-label="Search videos">
-    </label>
-    <button class="btn" id="searchBtn">Search</button>
+  <div class="section-title">
+    <h2 id="sectionTitle">Explore Videos</h2>
+    <span class="count" id="count"></span>
   </div>
-
-  <div class="filters" id="filters">
-    <button class="filter active" data-filter="All">✨ All Videos</button>
-    <button class="filter" data-filter="Kids">🧸 Kids</button>
-    <button class="filter" data-filter="Learning">📚 Learning</button>
-    <button class="filter" data-filter="Music">🎵 Music</button>
-    <button class="filter" data-filter="Vehicles">🚗 Vehicles</button>
-    <button class="filter" data-filter="Favorites">❤️ Favorites</button>
-  </div>
-
-  <div class="sectionhead">
-    <h2 id="sectionTitle">Discover Videos 🌟</h2>
-    <span class="small" id="count"></span>
-  </div>
-
-  <div class="grid" id="grid"></div>
-  <div class="morewrap"><button class="btn" id="more">Load More Videos ↓</button></div>
-  <p class="note">Videos are played through YouTube. Some videos may be unavailable, restricted, or may not allow embedded playback. This website is a video directory and is not affiliated with the listed channels.</p>
+  <div class="grid" id="videoGrid"></div>
 </main>
 
-<footer>
-  <strong>🌈 KidsTube</strong><br>
-  A colorful place for kids' entertainment and learning.<br>
-  Parents should help children choose age-appropriate videos.<br>
-  © <span id="year"></span> KidsTube
-</footer>
-
 <div class="modal" id="modal" role="dialog" aria-modal="true" aria-label="Video player">
-  <div class="modalbox">
-    <div class="modalhead">
-      <h3 id="modalTitle">Now Playing</h3>
-      <button class="close" id="close" aria-label="Close video">×</button>
+  <div class="modal-box">
+    <div class="modal-head">
+      <h3 id="modalTitle">Now playing</h3>
+      <button class="close" id="closeModal" aria-label="Close player">✕</button>
     </div>
-    <iframe class="player" id="player" title="YouTube video player"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-      allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
+    <div class="player" id="player"></div>
+    <div class="notice">Videos are played through YouTube. Some videos may be unavailable or have playback restrictions.</div>
   </div>
 </div>
 
+<footer>🌈 KidsTube · A colorful place to discover videos</footer>
+
 <script>
 const groups = [
-["Vehicles","Kids Vehicles","Emergency Vehicles",["OhzbUI6dMeE","cXSI8dM70xc","2mhdhgtx-94","XNAcJtYG7rI","sBGAmjtKIok","oPwe10JlrNc","mUonf7hWgVY","amrKjLOsNJE","nJBVTRKUMLY","H0BoQN5RXEU","X2rxU3_Y75I","rfGxTNjUi4M","v_qsBssBovI"]],
-["Learning","Ms Rachel","Toddler Learning",["jBvzOfT8_44","hTqtGJwsJVE","K_Aq4H03Nm4","gngPQ771Ahk","bOiYN7iU-W8"]],
-["Learning","Blippi","Blippi Learning",["0IOy1HZZ2nw","-VA-DKxxio0","Gh-XKNuvvC4","v2id3D31u0o","KLUnWA2RKg0"]],
-["Kids","Peppa Pig","Peppa Pig",["9qShcQMq1cA","cIi7WKizZpI","GtX2mHnR0Fc","uJ-8ooJKZXo","zeSczE6vc4c"]],
-["Learning","Sesame Street","Sesame Street",["crQpStMwnwk","Py2f38iPBeI","09AmpC7oKGU","0b-v-wMR69k","fZ9WiuJPnNA"]],
-["Learning","Numberblocks","Numberblocks",["ebQX7uQ6Zak","znL9An29uis","w4zGbQ5Akqo","yj5p0-uGR5U","FG18571ruVQ"]],
-["Learning","Alphablocks","Alphablocks",["xg4_gWt8N_Q","s7LjGDcXqcs","9HKbQ1QyLaU","wpoHQN2X8mM","VxBEmaaSh1c"]],
-["Kids","PAW Patrol","PAW Patrol",["S-lkBBl-KG4","0GbHgBMgDCo","9jRYrzvpt4s","ueKOOFBCqQQ","EB90SQ6Ugj4"]],
-["Kids","Pocoyo","Pocoyo",["swVI1aYW8E0","tqAf9tFW00Y","WDQl4w-n9IE","6NlJMl1asew","QUt4TosgRNs"]],
-["Music","Super Simple Songs","Kids Songs",["2S__fbCGwOM","LrAtBtQnvCE","9mmF8zOlh_g","OzKY5YHnOTg","6916kVhbEZw"]],
-["Music","Pinkfong","Pinkfong Kids Songs",["XqZsoesa55w","4bMOTTJqGgM","R93ce4FZGbc","6x-sd-HHrpI","020g-0hhCAU"]],
-["Music","Dave and Ava","Nursery Rhymes",["IBpJmnHWRVI","mHLLclRQ10o","JTIXGdsM73M","isidNk0Ppkw","p1f7cs4Gv2Y"]],
-["Music","Little Baby Bum","Nursery Rhymes",["tFoUuFq3vHw","HBxB0QkyiGU","emC3qoSyfnQ","Vx3RFjQEqt0","WSC-gHBU_d0","cTXMF_c4afw","TBRdYaYTs18","39IV1dtwCXs"]],
-["Kids","Vlad and Niki","Vlad and Niki",["Wyd9cYmLZ10","5MKDkbhQDoc","ZTc991t51d4","M8fEj77zdfw","TUNUbGf42XM"]],
-["Kids","Kids Diana Show","Kids Diana",["WE-peDdaA-w","E4_JfDd7yVE","QsaATI1BoCg","mOD-tCVV5SM","0_SztpoCoJ8"]],
-["Kids","Ryan's World","Ryan's World",["xzaNqjc4fkE","SQUV705XWCU","J9pqVPGu1bY","VObZz6LquuY","1qjxk7gNX6M"]],
-["Learning","Kids Learning","Educational Videos",["_UR-l3QI2nE","e_04ZrNroTo","WRVsOCh907o","ohHYABXMqUQ","D1LDPmYoYm4","Wm4R8d0d8kU","HJkAI-Dhq50","GVPB671FZ1k","Ser69-nsRNs","VD-ecJSUfZ0","71h8MZshGSs","qXcMNBQnQMM","DruYNHN4FYY","9FDuUd39NOI","uiwOgoi3E_w","bPZ_r55v8us","h_aq-9uRGPU"]],
-["Music","CoComelon","CoComelon Kids Songs",["KPdgH4ZBxA4","UCFxJIYgCtQ","vTLfOqEolsk","rHjhg_w09_c","TloXEcbCF8Q","8qvHQIJ4Y3k","6h-TOlUPxEI","Cbft7FoMGFk"]],
-["Kids","Kids Videos","Kids Fun",["Xw3-3jQQMBk","aP-qKaig84M","wpTjh83mL0k","TU0-HHvUz7M","wXLBNFd1xro"]],
-["Kids","Mom's New Videos","Mom's Collection Part 1",[
-"ybLEIWIoNn0","CGjRPy31uZE","0w5htxelGlY","N3Eh4a3PrZs","GSlAAO4sqqw",
-"qnM87-NLTp8","vVM243RSKxc","hX-N2IhQxUc","g36jg5hEYo8","_mQq660iRnU",
-"S84fHUZdOGs","8EZeNbP47yo","rZ02ANqhJnQ","B3ddiZGZqt8","FD9m3sda_gA",
-"-oPTbI-t-44","pphyDw50jsE","n9pp51CPzoc","wOOtC2z9fhU","TsdpcbQ3nX0"
-]],
-["Kids","Mom's New Videos","Mom's Collection Part 2",[
-"qYaHoiUK0sc","68pnAMQSj4Y","LZ5_2p5mRWM","urqWcUPdD80","AYUhUZlT-Hg",
-"sJSGEQgAYWg","NrX9To4bjFk","GkQmkZNLCeM","9_WBQISVHnw","gSqCz4aiqSs",
-"G1Lxvkf4T9Y","gzzl6JgTR1k","EN1SJT76JoY","rPe4yziWiOg","drkOBuiGPCM",
-"k1H6sWnrI2Y","evXG5HuwIn0","TPvTK-S_VR4","WN1FhKMgeLU","c5YdpZjW-dc",
-"M0VUAh1ST0U","jXHOHOYkbYc","saFXih4TvE4","05dcZUK_k7I","tVJGMP96_zo",
-"PhMa7ZthMBc","NUMz00m8ySk","KMc6DyEJp04","pZw9veQ76fo","LLsqo5THFAE",
-"COIw9e834Ag","FXjC69MmcPY","ILPjPIFNsRA","jMJk9q6miG4","kIoD2MPKVrw",
-"WhrQ1HHy7S8","15esmSD8mIY","07d2dXHYb94","QZPXhjxy2HY","bZFjXrMOENc",
-"CaBEdunlaOU","M6gWY5lS9KU","r2kNBcY1FQ8","gS3tTs4giM4","M_rH3Z_R6-U",
-"hFDL5FFHAuc","HI5upQGIqmY","FTHtY7AYnkI","SxpbRo_Zhjw","h_6d8InZ2D0",
-"f--hb5og_Fg","a3g1wjRLqQc","noCiE_1YRJo","U4gSKg8dL4Q","WOn8gdKrZzY",
-"FmUToko7EBY","mSEYTJZ4N_c","XhSvTHsNtVg","uCYJVRupJ9k","HaEmIakO7f4",
-"h4eueDYPTIg","5ajRc-YvLhg","U9b80qK3cs4","XJbowRRA9vA","EPEdlgzQqSc",
-"r7HuHApf7fA","iyjny2WAKcg","-WPPFUT8R44","kIijwsrIGy8","R2hYUzn44JE",
-"v-vqi0UaUdE","L96V9lOo8ec","0lS9btv3GVk","op4C2TypclE","2UcZWXvgMZE",
-"pqLDVLf5vgU","N33LzkTmk1A","aEOfldeB_tw","2fU7hNobOjo","Ih_swD45rcg",
-"NAKctif7Nyo","MGhMShAXsHM","-OVGSISs-WA","DSSjGSoFfk0","qq37Jfxa2ig",
-"bMuVqRat-Ek","c4YCDmbgrX0","9aFZQ2whcSM","uziL1iumlMU","EAx6VZteAwQ",
-"A5gwWI8MnC4","8VCpa4blanQ","DsUPVERZFlI","zUTZEk32tc8","c-v-7JRisLA",
-"UdrG_UUNacY","wg6IPPW-RpU","y4bRAYwi8Lo","RqMsnv-mcRQ","TeP1QMtmAjs",
-"VXokId-v7oU"
-]]
+["Vehicles",`OhzbUI6dMeE cXSI8dM70xc 2mhdhgtx-94 XNAcJtYG7rI sBGAmjtKIok oPwe10JlrNc mUonf7hWgVY amrKjLOsNJE nJBVTRKUMLY H0BoQN5RXEU X2rxU3_Y75I rfGxTNjUi4M v_qsBssBov4`],
+
+["Learning",`jBvzOfT8_44 hTqtGJwsJVE K_Aq4H03Nm4 gngPQ771Ahk bOiYN7iU-W8 0IOy1HZZ2nw -VA-DKxxio0 Gh-XKNuvvC4 v2id3D31u0o KLUnWA2RKg0 crQpStMwnwk Py2f38iPBeI 09AmpC7oKGU 0b-v-wMR69k fZ9WiuJPnNA ebQX7uQ6Zak znL9An29uis w4zGbQ5Akqo yj5p0-uGR5U FG18571ruVQ xg4_gWt8N_Q s7LjGDcXqcs 9HKbQ1QyLaU wpoHQN2X8mM VxBEmaaSh1c _UR-l3QI2nE e_04ZrNroTo WRVsOCh907o ohHYABXMqUQ D1LDPmYoYm4 Wm4R8d0d8kU HJkAI-Dhq50 GVPB671FZ1k Ser69-nsRNs VD-ecJSUfZ0 71h8MZshGSs qXcMNBQnQMM DruYNHN4FYY 9FDuUd39NOI uiwOgoi3E_w bPZ_r55v8us h_aq-9uRGPU`],
+
+["Kids",`9qShcQMq1cA cIi7WKizZpI GtX2mHnR0Fc uJ-8ooJKZXo zeSczE6vc4c S-lkBBl-KG4 0GbHgBMgDCo 9jRYrzvpt4s ueKOOFBCqQQ EB90SQ6Ugj4 swVI1aYW8E0 tqAf9tFW00Y WDQl4w-n9IE 6NlJMl1asew QUt4TosgRNs Wyd9cYmLZ10 5MKDkbhQDoc ZTc991t51d4 M8fEj77zdfw TUNUbGf42XM WE-peDdaA-w E4_JfDd7yVE QsaATI1BoCg mOD-tCVV5SM 0_SztpoCoJ8 xzaNqjc4fkE SQUV705XWCU J9pqVPGu1bY VObZz6LquuY 1qjxk7gNX6M KPdgH4ZBxA4 UCFxJIYgCtQ vTLfOqEolsk rHjhg_w09_c TloXEcbCF8Q 8qvHQIJ4Y3k 6h-TOlUPxEI Cbft7FoMGFk Xw3-3jQQMBk aP-qKaig84M wpTjh83mL0k TU0-HHvUz7M wXLBNFd1xro dZUq8hpKICY Dn8IFrL0wMY LrO_ckUNTbU oLyREWzEezM OvqBnMxTvog -h5NFVOF8Qk kVyJ6q8nA3I drkOBuiGPCM aJkpQHqAvCk YcMAEbki--g ZNEG5x-puJY R9qzbir4v5M izfUsHZw9bs CkdzUVkbvDc jpPGFTtKO2U ajVA03zbVlc wsZp1niFZCs uaPH6lscXAA d7sHFcthZJQ ImIceOFSP6M YxuyOB2rOzY yxeByGpuYOI rnguXTipwm8 4NkNrGwqsiE B5yehhCgL1I Mxzqdoicr5s`],
+
+["Music",`2S__fbCGwOM LrAtBtQnvCE 9mmF8zOlh_g OzKY5YHnOTg 6916kVhbEZw XqZsoesa55w 4bMOTTJqGgM R93ce4FZGbc 6x-sd-HHrpI 020g-0hhCAU IBpJmnHWRVI mHLLclRQ10o JTIXGdsM73M isidNk0Ppkw p1f7cs4Gv2Y tFoUuFq3vHw HBxB0QkyiGU emC3qoSyfnQ Vx3RFjQEqt0 WSC-gHBU_d0 cTXMF_c4afw TBRdYaYTs18 39IV1dtwCXs dQw4w9WgXcQ kJQP7kiw5Fk 9bZkp7q19f0 RgKAFK5djSk JGwWNGJdvx8 OPf0YbXqDm0 4NRXx6U8ABQ hLQl3WQQoQ0 lp-EO5I60KA hT_nvWreIhg 0zGcUoRlhmw q0hyYWKXF0Q DyDfgMOUjCI YQHsXMglC9A CevxZvSJLk8 nfWlot6h_JM My2FRPA3Gf8 YqeW9_5kURI 7wtfhZwyrcc BQ0mxQXmLsk 2Vv-BfVoq4g fRh_vgS2dFE 09R8_2nJtjg 60ItHLz5WEA IcrbM1l_BoI fJ9rUzIMcZQ kXYiU_JCYtU eVTXPUF4Oz4 hTWKbfoikeg`],
+
+["Fun",`Fogi4Mz1e1s RwOaGwd3KGg zC-5NBkye-0 khz-3KSvbxE 24aqtFw-_oI GyO1MtLhyt0 SFh_dBNkJFM UkVoNvYdKBs TJudAzI3wO0 ansV7H0JX-M mzkgzE-jXkI 8DonKfi06uo fZJ9P-bwbeg 6KGQTbYkVq4 6Wdf52zGVVU 1EdHfbl2-UU BwgiiQKaKKk fTzLPlqy0bQ rcc4LrBYOw8 c8jCquu10UI ETYliscEaqs 1U8P07aMVzU W3bDBhgLS6Y 8mR9lp-zCHQ I4eaL9u4asE uaMttCRrbj8 LhWJykBZYWI -G7djnMm804 -hr1UKtdIAY v8LUzSXcWj0 ONnVQA2i3nY G-tr41VgzB8 jTMUyJkvILE U7ZBr8VTQYU ElCTVmBQA8Q WBKFPONE8pI J0xw8S5PpCg 2MVYYv_RPFg vSo_fryaUkY sILHqUPZbLc Vn-_Pnr0uQI EycprjLvUCk B0PVA771q28 jXfrA9NUi7s vy6UhE7x8I8 GSRzeSS-toE`],
+
+["Kids",`ybLEIWIoNn0 CGjRPy31uZE 0w5htxelGlY N3Eh4a3PrZs GSlAAO4sqqw qnM87-NLTp8 vVM243RSKxc hX-N2IhQxUc g36jg5hEYo8 _mQq660iRnU S84fHUZdOGs 8EZeNbP47yo rZ02ANqhJnQ B3ddiZGZqt8 FD9m3sda_gA -oPTbI-t-44 pphyDw50jsE n9pp51CPzoc wOOtC2z9fhU TsdpcbQ3nX0 qYaHoiUK0sc 68pnAMQSj4Y LZ5_2p5mRWM urqWcUPdD80 AYUhUZlT-Hg sJSGEQgAYWg NrX9To4bjFk GkQmkZNLCeM 9_WBQISVHnw gSqCz4aiqSs G1Lxvkf4T9Y gzzl6JgTR1k EN1SJT76JoY rPe4yziWiOg k1H6sWnrI2Y evXG5HuwIn0 TPvTK-S_VR4 WN1FhKMgeLU c5YdpZjW-dc M0VUAh1ST0U jXHOHOYkbYc saFXih4TvE4 05dcZUK_k7I tVJGMP96_zo PhMa7ZthMBc NUMz00m8ySk KMc6DyEJp04 pZw9veQ76fo LLsqo5THFAE COIw9e834Ag FXjC69MmcPY ILPjPIFNsRA jMJk9q6miG4 kIoD2MPKVrw WhrQ1HHy7S8 15esmSD8mIY 07d2dXHYb94 QZPXhjxy2HY bZFjXrMOENc CaBEdunlaOU M6gWY5lS9KU r2kNBcY1FQ8 gS3tTs4giM4 M_rH3Z_R6-U hFDL5FFHAuc HI5upQGIqmY FTHtY7AYnkI SxpbRo_Zhjw h_6d8InZ2D0 f--hb5og_Fg a3g1wjRLqQc noCiE_1YRJo U4gSKg8dL4Q WOn8gdKrZzY FmUToko7EBY mSEYTJZ4N_c XhSvTHsNtVg uCYJVRupJ9k HaEmIakO7f4 h4eueDYPTIg 5ajRc-YvLhg U9b80qK3cs4 XJbowRRA9vA EPEdlgzQqSc r7HuHApf7fA iyjny2WAKcg -WPPFUT8R44 kIijwsrIGy8 R2hYUzn44JE v-vqi0UaUdE L96V9lOo8ec 0lS9btv3GVk op4C2TypclE 2UcZWXvgMZE pqLDVLf5vgU N33LzkTmk1A aEOfldeB_tw 2fU7hNobOjo Ih_swD45rcg NAKctif7Nyo MGhMShAXsHM -OVGSISs-WA DSSjGSoFfk0 qq37Jfxa2ig bMuVqRat-Ek c4YCDmbgrX0 9aFZQ2whcSM uziL1iumlMU EAx6VZteAwQ A5gwWI8MnC4 8VCpa4blanQ DsUPVERZFlI zUTZEk32tc8 c-v-7JRisLA UdrG_UUNacY wg6IPPW-RpU y4bRAYwi8Lo RqMsnv-mcRQ TeP1QMtmAjs VXokId-v7oU`],
+
+["Kids",`Z04t6OjPyYY DEWdz8AInfk lT5z4vlEpM4 WdOn2jznlxw UuyUdjBy-LM NwWJXE7uIOA Qo1O9RoenNI loZxCUczi9Y pfGmGzxAiCU VCS4d_krNko nLWmOvirBWQ k1KGBzealWA W6atV9i5dM8 PZxxgafKqqk OwH4gGM1BaU nU6Ne0Vadec kADI0ecBOYg 6JsrntGEDIs iC9OgJGI_YA pQXwDx3TQCE AQePnBgNM5w bCUnAG287Uw 8CUYOvxaP3I 37IWGmpGenc gaKjEppVL7Q yYDfKUvhiZM owQvI79BMPU BbhASJOsWms gbT4cEL-mu4 uP1DjcO53Fw o2xDANfO8mQ keLX1fmugSc mSWFJJTtVqU MHZ5fdQYv-0 CZJZ7-S0las Zf5d8pcifd0 MaUUrb6kAaM LmPoZIat1qM egVIZBUj8yE WG5M6Ex6KXY L1DSVYZNZEA OmGpiZun_CI 4HGwX5b44Yc dRsAyr3W5Fg upA6CaMVhQ8 CPUnGrGelMY FQRkcX4alRU FLREgTQLY0E 1TNxX6_DOAM w90n68RIrk4 YSA2f19ABPk ie0c4NcDONE sBMmTcTjgSU QUN4f-EgwaE ejGg-c6ykj4 WChHF6bpuUs X7Y53AFtGZQ othDdo-VnXc A9gcIpnsZlw 3LvL03U9F8I Wz--wtGlJtM 8hhU-jyUxCo cdlEJ5vnB2M cqTR56kupLw zKF8dFsJMmM ZzlK-R5Graw SA8kwyIepzs ryn2v1m0iwA MmsPeLGSbn8 2NW4Ye_BF7U nhkIV54orN0 rjBae3OAF38 2OjZCZuZeW0 1UG1rWvqvaU AaFd-ttv138 yAwJ3vRieUY NFfptLhpg0c s6w6-LHv62E jwGbPQLRYoQ Ixg6LDhQ-40 37Ucqqyd9_8 pDPwQYSRIj8 8SfLFObzibI 9NuqSv_C5pM qNkSGOst6eg dFP-7w30IOs dFrODXXSAK4 dL_Trq-5qaE qx5yblEdQkk reN8rEqAKbg N5wgQ_7vDjs 8OtHsYlTOeY HudTXqTJT0Q`],
+
+["Kids",`kfPd3M3u6Kc mWXrM-OKBNQ gEbbHlMXE9Y hUAwg7qp2DM 0vgw2JL7qag YDhoIHgYYwo CFjH9BM1JDs saNTBCJ7Qyw vtG1jwJRGzU ZG2BvEGFJ0E EZtyvPJ28EU WUYWMLpvTEo`],
+
+["Kids",`heE_lieGsZ8 mnJJc_nUDdE r0xRqiPlQ_w y0CoMUMaGQ4 h7h0wrzSJ-w CKLpJpVqpJo 8uKNyWMN0dk FFsbIYE4DmM FQzrWTsx4eI 7Kb8GWYvlRM lkfNZoTmbBs KDhPVQ31J1o FBaw-_FyoNE qs3bQ9FENjU Lfmuxne2LLE HqjkcN9n37g Rz69PcczSAY sIGjfyzwwMg hZiyhZsjLfo gQQaR4sZmWE szS3MBDUoKc M14hGFt3znE WL43S8SBHHM MSuj1dKG4n8 7l9wF6jKUa8 B09hEXk6A34 WEJqJnaRsnQ OjRhwmPq_-E S3_ZeWAWJIM puE84hHyGlU c_-Fn0nn678 QQz9BAzDYtU K4erDxcIt2s LTjSIFD7iQE lLlnJEJbMX0 johK5YPuVNA Bta6NqgStKI konwtsGyZeU 7wCGfEleK3I gBjp9PxAZ-M ofp1SU-wZAc uMm9UECLGqw B9DQoe2d-0k 4ER9CrRdOKc q-5_mwNdhuE s0VruXmA__k 8uXh3_bt77M HtgXGm6rvE8 4JbgLK7F40g 5exUyh0DeG4 9onmahpGNxk Lwj8zksPVLA G1aNOASJSsY YNosjhgRXZA 6vzDZcE-omM`]
 ];
 
-// Create a searchable library and automatically remove duplicate video IDs.
 const videos = [];
 const seen = new Set();
 
-groups.forEach(([category, channel, description, ids]) => {
-  ids.forEach((id, index) => {
-    if (!id || seen.has(id)) return;
+for (const [category, ids] of groups) {
+  for (const id of ids.trim().split(/\s+/)) {
+    if (!id || seen.has(id)) continue;
     seen.add(id);
-    videos.push({
-      id, category, channel, description,
-      title: channel + " • Video " + (index + 1)
-    });
-  });
-});
+    videos.push({id, category});
+  }
+}
 
-const grid = document.getElementById("grid");
-const search = document.getElementById("search");
+const grid = document.getElementById("videoGrid");
+const searchInput = document.getElementById("searchInput");
 const count = document.getElementById("count");
-const title = document.getElementById("sectionTitle");
-const more = document.getElementById("more");
+const sectionTitle = document.getElementById("sectionTitle");
 const modal = document.getElementById("modal");
 const player = document.getElementById("player");
 const modalTitle = document.getElementById("modalTitle");
 
-let activeFilter = "All";
-let visibleLimit = 24;
-let currentVideos = [];
+let currentCategory = "All";
 let favorites = new Set();
 
 try {
   favorites = new Set(JSON.parse(localStorage.getItem("kidstube-favorites") || "[]"));
-} catch(e) {}
+} catch (e) {}
 
-const categoryIcons = {
-  Kids:"🧸", Learning:"📚", Music:"🎵", Vehicles:"🚗"
-};
-
-function getFilteredVideos() {
-  const term = search.value.trim().toLowerCase();
-
-  return videos.filter(v => {
-    const matchesFilter =
-      activeFilter === "All" ||
-      (activeFilter === "Favorites" && favorites.has(v.id)) ||
-      v.category === activeFilter;
-
-    const matchesSearch = !term ||
-      (v.channel + " " + v.title + " " + v.description + " " + v.id)
-      .toLowerCase().includes(term);
-
-    return matchesFilter && matchesSearch;
-  });
-}
-
-function saveFavorites() {
-  try {
-    localStorage.setItem("kidstube-favorites", JSON.stringify([...favorites]));
-  } catch(e) {}
+function videoTitle(video) {
+  return ({
+    Kids:"Fun Kids Video",
+    Learning:"Learn Something New",
+    Music:"Kids Music & Songs",
+    Vehicles:"Cars, Trucks & Vehicles",
+    Fun:"Fun Video Time"
+  })[video.category] || "Watch Video";
 }
 
 function render() {
-  currentVideos = getFilteredVideos();
-  const shown = currentVideos.slice(0, visibleLimit);
+  const query = searchInput.value.trim().toLowerCase();
 
-  title.textContent = activeFilter === "Favorites"
-    ? "Your Favorite Videos ❤️"
-    : activeFilter === "All" ? "Discover Videos 🌟" : activeFilter + " Videos";
+  const filtered = videos.filter(video => {
+    const matchesCategory = currentCategory === "All" ||
+      (currentCategory === "Favorites"
+        ? favorites.has(video.id)
+        : video.category === currentCategory);
 
-  count.textContent = currentVideos.length + " videos";
+    const matchesSearch = !query ||
+      videoTitle(video).toLowerCase().includes(query) ||
+      video.category.toLowerCase().includes(query) ||
+      video.id.toLowerCase().includes(query);
+
+    return matchesCategory && matchesSearch;
+  });
+
   grid.innerHTML = "";
+  count.textContent = `${filtered.length} videos`;
 
-  if (!shown.length) {
-    grid.innerHTML = '<div class="empty"><div style="font-size:36px">🔎</div><h3>No videos found</h3><p>Try another search or category.</p></div>';
-  } else {
-    const fragment = document.createDocumentFragment();
+  sectionTitle.textContent = currentCategory === "All"
+    ? "Explore Videos"
+    : currentCategory === "Favorites"
+      ? "Your Favorites ❤️"
+      : `${currentCategory} Videos`;
 
-    shown.forEach(v => {
-      const card = document.createElement("article");
-      card.className = "video-card";
-
-      const thumb = document.createElement("button");
-      thumb.className = "thumb";
-      thumb.setAttribute("aria-label", "Play " + v.title);
-
-      const img = document.createElement("img");
-      img.loading = "lazy";
-      img.alt = v.channel + " video thumbnail";
-      img.src = "https://i.ytimg.com/vi/" + encodeURIComponent(v.id) + "/hqdefault.jpg";
-      img.onerror = () => {
-        img.onerror = null;
-        img.src = "https://placehold.co/640x360/e9e7ff/6558ed?text=KidsTube";
-      };
-
-      const play = document.createElement("span");
-      play.className = "play";
-      play.textContent = "▶";
-      thumb.append(img, play);
-      thumb.addEventListener("click", () => openVideo(v));
-
-      const body = document.createElement("div");
-      body.className = "cardbody";
-
-      const h3 = document.createElement("h3");
-      h3.className = "cardtitle";
-      h3.textContent = v.title;
-
-      const meta = document.createElement("div");
-      meta.className = "cardmeta";
-
-      const badge = document.createElement("span");
-      badge.className = "category";
-      badge.textContent = (categoryIcons[v.category] || "🌈") + " " + v.category;
-
-      const fav = document.createElement("button");
-      fav.className = "favorite" + (favorites.has(v.id) ? " saved" : "");
-      fav.textContent = favorites.has(v.id) ? "♥" : "♡";
-      fav.title = favorites.has(v.id) ? "Remove from favorites" : "Add to favorites";
-      fav.setAttribute("aria-label", fav.title);
-      fav.addEventListener("click", () => {
-        if (favorites.has(v.id)) favorites.delete(v.id);
-        else favorites.add(v.id);
-        saveFavorites();
-        render();
-      });
-
-      meta.append(badge, fav);
-      body.append(h3, meta);
-      card.append(thumb, body);
-      fragment.append(card);
-    });
-
-    grid.append(fragment);
+  if (!filtered.length) {
+    grid.innerHTML = '<div class="empty">No videos found. Try another search! 🔎</div>';
+    return;
   }
 
-  more.style.display = currentVideos.length > visibleLimit ? "inline-block" : "none";
+  const fragment = document.createDocumentFragment();
+
+  filtered.forEach(video => {
+    const card = document.createElement("article");
+    card.className = "card";
+    card.style.cursor = "pointer";
+
+    const thumb = document.createElement("div");
+    thumb.className = "thumb";
+
+    const img = document.createElement("img");
+    img.loading = "lazy";
+    img.alt = videoTitle(video);
+    img.src = `https://i.ytimg.com/vi/${video.id}/hqdefault.jpg`;
+
+    img.onerror = () => {
+      img.onerror = null;
+      img.src = `https://i.ytimg.com/vi/${video.id}/mqdefault.jpg`;
+    };
+
+    const play = document.createElement("div");
+    play.className = "play";
+    play.textContent = "▶";
+    thumb.append(img, play);
+
+    const content = document.createElement("div");
+    content.className = "card-content";
+
+    const title = document.createElement("h3");
+    title.textContent = videoTitle(video);
+
+    const meta = document.createElement("div");
+    meta.className = "meta";
+
+    const tag = document.createElement("span");
+    tag.className = "tag";
+    tag.textContent = video.category;
+
+    const fav = document.createElement("button");
+    fav.className = "fav";
+    fav.textContent = favorites.has(video.id) ? "♥ Saved" : "♡ Save";
+    fav.setAttribute("aria-label", "Toggle favorite");
+
+    fav.addEventListener("click", event => {
+      event.stopPropagation();
+
+      if (favorites.has(video.id)) favorites.delete(video.id);
+      else favorites.add(video.id);
+
+      try {
+        localStorage.setItem("kidstube-favorites", JSON.stringify([...favorites]));
+      } catch (e) {}
+
+      render();
+    });
+
+    meta.append(tag, fav);
+    content.append(title, meta);
+    card.append(thumb, content);
+
+    card.addEventListener("click", () => openVideo(video));
+    fragment.appendChild(card);
+  });
+
+  grid.appendChild(fragment);
 }
 
-function openVideo(v) {
-  modalTitle.textContent = v.channel + " — " + v.title;
+function openVideo(video) {
+  modalTitle.textContent = videoTitle(video);
+  player.innerHTML = "";
+
+  const iframe = document.createElement("iframe");
+  iframe.src = `https://www.youtube-nocookie.com/embed/${encodeURIComponent(video.id)}?autoplay=1&rel=0`;
+  iframe.title = videoTitle(video);
+  iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+  iframe.allowFullscreen = true;
+  iframe.referrerPolicy = "strict-origin-when-cross-origin";
+
+  player.appendChild(iframe);
   modal.classList.add("open");
-  player.src = "https://www.youtube-nocookie.com/embed/" +
-    encodeURIComponent(v.id) + "?autoplay=1&rel=0";
   document.body.style.overflow = "hidden";
 }
 
 function closeVideo() {
   modal.classList.remove("open");
-  player.src = "";
+  player.innerHTML = "";
   document.body.style.overflow = "";
 }
 
-document.getElementById("close").addEventListener("click", closeVideo);
+document.getElementById("closeModal").addEventListener("click", closeVideo);
 
-modal.addEventListener("click", e => {
-  if (e.target === modal) closeVideo();
+modal.addEventListener("click", event => {
+  if (event.target === modal) closeVideo();
 });
 
-document.addEventListener("keydown", e => {
-  if (e.key === "Escape") closeVideo();
+document.addEventListener("keydown", event => {
+  if (event.key === "Escape") closeVideo();
 });
 
-document.getElementById("filters").addEventListener("click", e => {
-  const btn = e.target.closest(".filter");
-  if (!btn) return;
+document.getElementById("categories").addEventListener("click", event => {
+  const button = event.target.closest("button[data-category]");
+  if (!button) return;
 
-  activeFilter = btn.dataset.filter;
-  visibleLimit = 24;
+  currentCategory = button.dataset.category;
 
-  document.querySelectorAll(".filter").forEach(b => {
-    b.classList.toggle("active", b === btn);
+  document.querySelectorAll("#categories button").forEach(item => {
+    item.classList.toggle("active", item === button);
   });
 
   render();
 });
 
-search.addEventListener("input", () => {
-  visibleLimit = 24;
+document.getElementById("searchForm").addEventListener("submit", event => {
+  event.preventDefault();
   render();
 });
 
-document.getElementById("searchBtn").addEventListener("click", () => {
-  visibleLimit = 24;
-  render();
-});
-
-search.addEventListener("keydown", e => {
-  if (e.key === "Enter") {
-    visibleLimit = 24;
-    render();
-  }
-});
-
-more.addEventListener("click", () => {
-  visibleLimit += 24;
-  render();
-});
-
-document.getElementById("year").textContent = new Date().getFullYear();
+searchInput.addEventListener("input", render);
 render();
 </script>
 </body>
